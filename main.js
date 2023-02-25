@@ -1,0 +1,484 @@
+$(function () {
+
+  let key = '';
+  var xhr = new XMLHttpRequest();
+  xhr.open("GET", "key.txt", true);
+  xhr.onreadystatechange = function () {
+    if (xhr.readyState === 4 && xhr.status === 200) {
+      key = xhr.responseText;
+    }
+  };
+  xhr.send();
+  console.log(key)
+
+
+  // wow animate input
+
+
+  $("input").click(function () {
+    $(this).addClass("wow pulse animated");
+    $(this).attr("style", "visibility: visible; animation-name: pulse ;");
+    $(this).data("data-wow-iteration", 52)
+  });
+  // wow animate input
+
+
+  // addMore
+
+  $('#addMore').click(function () {
+
+    addMore();
+
+    if (a > 1) {
+      $("#remove").show();
+    }
+
+    if (a > 2) {
+      $('#addMore').hide();
+    }
+
+  })
+  // addMore
+
+
+
+  // remove Add
+  $("#remove").click(function () {
+    remove();
+
+    if (a <= 1) {
+      $("#remove").hide();
+    }
+
+    if (a < 3) {
+      $('#addMore').show();
+    }
+
+  });
+  // remove Add
+
+
+  // addMoreJob
+
+  $('#addMoreJob').click(function () {
+
+    addMore();
+
+    if (d > 1) {
+      $("#removeJob").show();
+    }
+
+  })
+  // addMore Job
+
+
+
+  // remove Add Job
+  $("#remove1").click(function () {
+    remove();
+
+    if (d <= 1) {
+      $("#remove1").hide();
+    }
+
+    if (d < 1) {
+      $('#addMoreJob').show();
+    }
+
+  });
+  // remove Add Job
+
+
+  // addMoreJob
+
+  $('#addMoreStyle').click(function () {
+
+    addMore();
+
+    if (f > 1) {
+      $("#removeStyle").show();
+    }
+
+  })
+  // addMore Job
+
+
+
+  // remove Add Job
+  $("#remove2").click(function () {
+    remove();
+
+    if (f <= 1) {
+      $("#remove2").hide();
+    }
+
+    if (f < 1) {
+      $('#addMoreStyle').show();
+    }
+
+  });
+  // remove Add Job
+
+
+  // addMore Work
+  $('#addWork').click(function () {
+
+    addMoreWork();
+
+    if (b > 1) {
+      $("#removeWork").show();
+    }
+
+    if (b > 3) {
+      $('#addWork').hide();
+    }
+  })
+  // addMore Work
+
+
+
+  // remove Work
+  $("#removeWork").click(function () {
+
+    removeWork();
+    if (b <= 1) {
+      $("#removeWork").hide();
+    }
+
+    if (b < 4) {
+      $('#addWork').show();
+    }
+  });
+  // remove Work
+
+
+  // addMore Work
+  $('#addJob').click(function () {
+
+    addMoreJob();
+
+    if (c > 1) {
+      $("#removeJob").show();
+    }
+
+    if (c > 1) {
+      $('#addJob').hide();
+    }
+  })
+  // addMore Work
+
+
+
+  // remove Work
+  $("#removeJob").click(function () {
+
+    removeJob();
+    if (c <= 1) {
+      $("#removeJob").hide();
+    }
+
+    if (c <= 1) {
+      $('#addJob').show();
+    }
+
+    // if (b < 4) {
+    //   $('#addWork').show();
+    // }
+  });
+  // remove Work
+
+  // addMore Work
+  $('#addStyle').click(function () {
+
+    addMoreStyle();
+
+    if (e > 1) {
+      $("#removeStyle").show();
+    }
+
+    if (e > 1) {
+      $('#addStyle').hide();
+    }
+  })
+  // addMore Work
+
+
+
+  // remove Work
+  $("#removeStyle").click(function () {
+
+    removeStyle();
+    if (c <= 1) {
+      $("#removeStyle").hide();
+    }
+
+    if (c <= 1) {
+      $('#addStyle').show();
+    }
+
+    // if (b < 4) {
+    //   $('#addWork').show();
+    // }
+  });
+  // remove Work
+
+
+
+
+
+
+
+
+  // form validation
+  $("#submitButton").click(function () {
+
+    // personal info
+    var name = $("#name").val();
+    console.log(name)
+
+    if (document.querySelector('input[type="radio"][name="gender"]:checked')) {
+      var gender = document.querySelector('input[type="radio"][name="gender"]:checked').value;
+      console.log(gender)
+    }
+
+
+
+    var age = $("#age").val();
+    console.log(age)
+
+    // job info
+    var jobDate = $("#job-date").val();
+    console.log(jobDate)
+
+    var jobTitle = $("#job-title").val();
+    console.log(jobTitle)
+
+    var organization = $("#organization").val();
+    console.log(organization)
+
+    var jobSite = $("#job-site").val();
+    console.log(jobSite)
+
+    var jobExp = $("#job-exp").val();
+    console.log(jobExp)
+
+    var jobTasks = $("#job-tasks").val();
+    console.log(jobTasks)
+
+    var jobTaskDifficulty = $("#job-task-difficulty").val();
+    console.log(jobTaskDifficulty)
+
+    var jobSchedule = $("#job-schedule").val();
+    console.log(jobSchedule)
+
+    var previousInjuries = $("#previous-injuries").val();
+    console.log(previousInjuries)
+
+    var rebaScore = $("#reba-score").val();
+    console.log(rebaScore)
+
+    prompt = `
+    Write a ergonomic evaluation report, provide recommendations and 
+implementation of ergonomic interventions. This is a report that an ergonomist or safety advisor is 
+writing for their company managers.\n\n
+When was the job task assessed using Vergo?\n
+Job task was assessed on ${jobDate} for hazards related to musculoskeletal disorders, as well as 
+other issues pertaining to workplace health and safety. Assessment took place by using a computer 
+vision pose estimation ergonomic tool that uses REBA standard.\n 
+Enter information about the employee\n
+Name: ${name}\n
+Gender: ${gender}\n
+Age: ${age} year old\n\n
+Job title and short job description : ${jobTitle} \n
+Organization working for: ${organization} \n
+Job site: ${jobSite} \n
+Length of Time on the Job: ${jobExp} \n
+Job Tasks: ${jobTasks} \n
+Job Task Difficulty: ${jobTaskDifficulty} \n
+Job Schedule and Breaks: ${jobSchedule} \n
+Any Previous injuries: ${previousInjuries} \n
+What was the REBA score using Vergo? ${rebaScore}
+    `
+
+    var inputsForValidate = $('.valid');
+
+    var value = check(inputsForValidate);
+    if (value) {
+
+      var url = "https://api.openai.com/v1/completions";
+
+      var xhr = new XMLHttpRequest();
+      xhr.open("POST", url);
+
+      xhr.setRequestHeader("Content-Type", "application/json");
+      xhr.setRequestHeader(
+        "Authorization",
+        `Bearer ${key}`
+      );
+
+      xhr.onreadystatechange = function () {
+        if (xhr.readyState === 4) {
+          console.log(xhr.status);
+          console.log(xhr.responseText);
+          let response = xhr.responseText;
+          response = JSON.parse(response);
+
+          console.log(response);
+
+          document.getElementById("output").innerHTML =
+            response["choices"][0]["text"];
+        }
+      };
+
+      if (prompt) {
+        prompt = JSON.parse(JSON.stringify(prompt));
+      }
+
+      var data = {
+        model: "text-davinci-003",
+        prompt: prompt,
+        temperature: 0.7,
+        max_tokens: 3200,
+        top_p: 1,
+        frequency_penalty: 0,
+        presence_penalty: 0,
+      };
+
+      data = JSON.stringify(data);
+
+      xhr.send(data);
+
+    }
+
+  });
+
+
+
+}); // documet ready end line
+
+// addMore function Work
+var b = 1;
+function addMoreWork() {
+
+
+  // if(b==4){
+  //   $("#workcClonedivFour").show(500);
+  //   b++;
+  // }
+  if (b == 3) {
+    $("#workcClonedivThree").show(500);
+    b++;
+  }
+  if (b == 2) {
+    $("#workcClonedivTwo").show(500);
+    b++;
+  }
+
+  if (b == 1) {
+    $("#workcClonediv").show(500);
+    b++;
+  }
+
+}
+
+function removeWork() {
+
+  if (b == 2) {
+    $("#workcClonediv").hide(500);
+    b--;
+    $("#workcClonediv input").val('');
+  }
+
+  if (b == 3) {
+    $("#workcClonedivTwo").hide(500);
+    b--;
+    $("#workcClonedivTwo input").val('');
+  }
+  if (b == 4) {
+    $("#workcClonedivThree").hide(500);
+    b--;
+    $("#workcClonedivThree input").val('');
+  }
+}
+
+var c = 1;
+function addMoreJob() {
+
+  if (c == 1) {
+    $("#jobSection").show(500);
+    c++;
+  }
+
+}
+
+function removeJob() {
+
+  if (c == 2) {
+    $("#jobSection").hide(500);
+    c--;
+    $("#jobSection input").val('');
+  }
+}
+
+// addMore function Work
+
+var e = 1;
+function addMoreStyle() {
+
+  if (e == 1) {
+    $("#styleSection").show(500);
+    e++;
+  }
+
+}
+
+function removeStyle() {
+
+  if (e == 2) {
+    $("#styleSection").hide(500);
+    e--;
+    $("#styleSection input").val('');
+  }
+}
+
+
+
+
+
+
+// form validation function
+function check(inputsForValidate) {
+  var result = true;
+  var firstFailedInput = null;
+  var flagForFirstFailedInput = 0;
+
+
+
+  inputsForValidate.each(function (i) {
+
+    $(this).removeClass('valid-error');
+
+    if ($(this).is(':visible')) {
+      if ($(this).val().trim().length == 0) {
+        $(this).addClass('valid-error');
+        result = false;
+        if (flagForFirstFailedInput == 0) {
+          firstFailedInput = $(this);
+          flagForFirstFailedInput = 1;
+        }
+
+      }
+    }
+
+
+  });
+
+  if (firstFailedInput != null) {
+    $('html, body').animate({
+      scrollTop: firstFailedInput.offset().top
+    }, 700);
+  }
+
+
+  return result;
+}

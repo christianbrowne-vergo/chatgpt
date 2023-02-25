@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>CV Form</title>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css"
+        integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+    <!-- index.css -->
+    <link rel="stylesheet" href="style.css">
+    <!-- wow animate css -->
+    <link rel="stylesheet" href="animate.css">
+    <!-- Font Awesome -->
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"
+        integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <!-- Googe Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Dosis" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+
+    <script src="https://code.jquery.com/jquery-3.6.3.js"
+        integrity="sha256-nQLuAZGRRcILA+6dMBOvcRh5Pe310sBpanc6+QBmyVM=" crossorigin="anonymous"></script>
+</head>
+
+<body>
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-6 mx-auto wow pulse">
+                <h2 id="intro">Create your Report</h2>
+            </div>
+        </div>
+    </div>
+
+    <div class="container-fluid m-2">
+        <div class="row">
+            <div class="col-md-6 mx-auto allCont">
+                <div class="container PI wow fadeInUp">
+                    <h3 id="infoPi">Employee Information</h3>
+                    <div class="col-lg-10 mx-auto" id="jobSection">
+                        <div class="form-group mx-auto">
+                            <label for="name">Name</label>
+                            <input type="text" class="form-control valid" id="name" placeholder="Enter Employee Name">
+                        </div>
+
+                        <div class="form-group mx-auto">
+                            <label>Gender</label>
+                            <label class="radio-inline"><input type="radio" name="gender" value="Male">Male</label>
+                            <label class="radio-inline"><input type="radio" name="gender" value="Female">Female</label>
+                        </div>
+
+                        <div class="form-group mx-auto">
+                            <label for="age">Age</label>
+                            <input type="number" class="form-control valid" id="age" placeholder="Enter Age">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-4 text-center mx-auto">
+                            <button class="btn" id="addJob">+</button>
+                            <button class="btn" id="removeJob">-</button>
+                        </div>
+                    </div>
+                </div>
+
+                <hr id="divid">
+                <div class="container wow fadeInUp">
+                    <h3 id="infoSkills">Job Information</h3>
+                    <div class="col-lg-10 mx-auto" id="styleSection">
+                        <div class="form-group mx-auto">
+                            <label for="job-date">When was the job task assessed using Vergo?
+                            </label>
+                            <input type="date" class="form-control valid" id="job-date">
+                        </div>
+                        <div class="form-group mx-auto">
+                            <label for="job-title">Job title and short description
+                            </label>
+                            <input type="text" class="form-control valid" id="job-title" placeholder="Enter job title and short description">
+                        </div>
+                        <div class="form-group mx-auto">
+                            <label for="organization">Organization working for
+                            </label>
+                            <input type="text" class="form-control valid" id="organization" placeholder="Enter organization name">
+                        </div>
+                        <div class="form-group mx-auto">
+                            <label for="job-site">Job Site
+                            </label>
+                            <input type="text" class="form-control valid" id="job-site" placeholder="Enter job site">
+                        </div>
+                        <div class="form-group mx-auto">
+                            <label for="job-exp">Length of Time on the Job
+                            </label>
+                            <input type="text" class="form-control valid" id="job-exp" placeholder="Enter job experience">
+                        </div>
+                        <div class="form-group mx-auto">
+                            <label for="job-tasks">Job Tasks
+                            </label>
+                            <input type="text" class="form-control valid" id="job-tasks" placeholder="Enter job tasks">
+                        </div>
+                        <div class="form-group mx-auto">
+                            <label for="job-task-difficulty">Job Tasks Difficulty
+                            </label>
+                            <input type="text" class="form-control valid" id="job-task-difficulty" placeholder="Enter job task difficulty">
+                        </div>
+                        <div class="form-group mx-auto">
+                            <label for="job-schedule">Job Schedule and Breaks
+                            </label>
+                            <input type="text" class="form-control valid" id="job-schedule" placeholder="Enter job schedule and breaks">
+                        </div>
+                        <div class="form-group mx-auto">
+                            <label for="previous-injuries">Any Previous injuries
+                            </label>
+                            <input type="text" class="form-control valid" id="previous-injuries" placeholder="Enter previous injuries if any">
+                        </div>
+                        <div class="form-group mx-auto">
+                            <label for="reba-score">What was the REBA score using Vergo?
+                            </label>
+                            <input type="number" class="form-control valid" id="reba-score" placeholder="Enter reba score using vergo">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-4 text-center mx-auto">
+                            <button class="btn" id="addStyle">+</button>
+                            <button class="btn" id="removeStyle">-</button>
+                        </div>
+                    </div>
+                    <!-- <div class="col-12 mx-auto">
+                        <div class="form-group mx-auto">
+                            <label for="skills">Skills:</label>
+                            <textarea class="form-control valid" id="skills" placeholder="Your Skills here"
+                                maxlength="300"></textarea>
+                        </div>
+                    </div> -->
+                </div>
+                <hr id="divid">
+                <div class="col-md-4 text-center mx-auto">
+                    <button type="button" id="submitButton">Submit</button>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="col-12 mx-auto">
+                    <div class="form-group mx-auto">
+                        <textarea class="form-control" rows="23" style="border-radius: 16px;" id="output"></textarea>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+    <script src="https://code.jquery.com/jquery-3.2.1.js"
+        integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js"
+        integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"
+        integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ"
+        crossorigin="anonymous"></script>
+    <script src="main.js"></script>
+    <script src="wow.js"></script>
+    <script>
+        new WOW().init();
+    </script>
+</body>
+
+</html>
