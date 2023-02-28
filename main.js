@@ -336,8 +336,6 @@ implementation of ergonomic interventions. This is a report that an ergonomist o
 writing for their company managers.\n\n
 Enter information about the employee\n
 Name: ${name}\n
-Gender: ${gender}\n
-Age: ${age} year old\n\n
 Job title and short job description : ${jobTitle} \n
 Organization working for: ${organization} \n
 Job site: ${jobSite} \n
