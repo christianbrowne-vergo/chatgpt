@@ -373,6 +373,8 @@ vision pose estimation ergonomic tool that uses REBA standard.\n
 
       xhr.onreadystatechange = function () {
         if (xhr.readyState === 4) {
+          document.querySelector(
+            "#loader").style.visibility = "hidden";
           console.log(xhr.status);
           console.log(xhr.responseText);
           let response = xhr.responseText;
@@ -403,7 +405,8 @@ vision pose estimation ergonomic tool that uses REBA standard.\n
       data = JSON.stringify(data);
 
       xhr.send(data);
-
+      document.querySelector(
+        "#loader").style.visibility = "visible";
     }
 
   });
