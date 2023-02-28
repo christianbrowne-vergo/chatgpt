@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>CV Form</title>
+    <title>Job Task Evaluation Report</title>
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css"
@@ -30,7 +30,7 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-md-6 mx-auto wow pulse">
-                <h2 id="intro">Create your Report</h2>
+                <h2 id="intro">Job Task Evaluation Report</h2>
             </div>
         </div>
     </div>
@@ -56,6 +56,22 @@
                             <label for="age">Age</label>
                             <input type="number" class="form-control valid" id="age" placeholder="Enter Age">
                         </div>
+                        <div class="form-group mx-auto">
+                            <label for="job-title">Job title and short description
+                            </label>
+                            <input type="text" class="form-control valid" id="job-title" placeholder="Enter job title and short description">
+                        </div>
+                                   
+                        <div class="form-group mx-auto">
+                            <label for="organization">Organization working for
+                            </label>
+                            <input type="text" class="form-control valid" id="organization" placeholder="Enter organization name">
+                        </div>
+                        <div class="form-group mx-auto">
+                            <label for="job-exp">Length of Time on the Job
+                            </label>
+                            <input type="text" class="form-control valid" id="job-exp" placeholder="Enter job experience">
+                        </div>
                     </div>
                     <div class="row">
                         <div class="col-lg-4 text-center mx-auto">
@@ -70,31 +86,18 @@
                     <h3 id="infoSkills">Job Information</h3>
                     <div class="col-lg-10 mx-auto" id="styleSection">
                         <div class="form-group mx-auto">
-                            <label for="job-date">When was the job task assessed using Vergo?
+                            <label for="reba-score">What was the REBA score using Vergo?
                             </label>
-                            <input type="date" class="form-control valid" id="job-date">
+                            <input type="number" class="form-control valid" id="reba-score" placeholder="Enter reba score using vergo">
                         </div>
-                        <div class="form-group mx-auto">
-                            <label for="job-title">Job title and short description
-                            </label>
-                            <input type="text" class="form-control valid" id="job-title" placeholder="Enter job title and short description">
-                        </div>
-                        <div class="form-group mx-auto">
-                            <label for="organization">Organization working for
-                            </label>
-                            <input type="text" class="form-control valid" id="organization" placeholder="Enter organization name">
-                        </div>
+           
                         <div class="form-group mx-auto">
                             <label for="job-site">Job Site
                             </label>
                             <input type="text" class="form-control valid" id="job-site" placeholder="Enter job site">
                         </div>
-                        <div class="form-group mx-auto">
-                            <label for="job-exp">Length of Time on the Job
-                            </label>
-                            <input type="text" class="form-control valid" id="job-exp" placeholder="Enter job experience">
-                        </div>
-                        <div class="form-group mx-auto">
+
+                        <!-- <div class="form-group mx-auto">
                             <label for="job-tasks">Job Tasks
                             </label>
                             <input type="text" class="form-control valid" id="job-tasks" placeholder="Enter job tasks">
@@ -103,22 +106,28 @@
                             <label for="job-task-difficulty">Job Tasks Difficulty
                             </label>
                             <input type="text" class="form-control valid" id="job-task-difficulty" placeholder="Enter job task difficulty">
+                        </div> -->
+                            <div class="form-group mx-auto">
+                            <label for="demands">Physical demands including any risk factor
+                            </label>
+                            <input type="text" class="form-control valid" id="demands" placeholder="Enter physical demands">
+                        </div>
+                        <div class="form-group mx-auto">
+                            <label for="env-factors">Environmental Factors
+                            </label>
+                            <input type="text" class="form-control valid" id="env-factors" placeholder="Enter job task difficulty">
                         </div>
                         <div class="form-group mx-auto">
                             <label for="job-schedule">Job Schedule and Breaks
                             </label>
                             <input type="text" class="form-control valid" id="job-schedule" placeholder="Enter job schedule and breaks">
                         </div>
-                        <div class="form-group mx-auto">
+                        <!-- <div class="form-group mx-auto">
                             <label for="previous-injuries">Any Previous injuries
                             </label>
                             <input type="text" class="form-control valid" id="previous-injuries" placeholder="Enter previous injuries if any">
-                        </div>
-                        <div class="form-group mx-auto">
-                            <label for="reba-score">What was the REBA score using Vergo?
-                            </label>
-                            <input type="number" class="form-control valid" id="reba-score" placeholder="Enter reba score using vergo">
-                        </div>
+                        </div> -->
+                    
                     </div>
                     <div class="row">
                         <div class="col-lg-4 text-center mx-auto">
@@ -135,6 +144,46 @@
                     </div> -->
                 </div>
                 <hr id="divid">
+                <div class="container wow fadeInUp">
+                    <h3 id="infoSkills">Evaluator Information</h3>
+                    <div class="col-lg-10 mx-auto" id="evSection">
+                        <div class="form-group mx-auto">
+                            <label for="name1">Name</label>
+                            <input type="text" class="form-control valid" id="name1" placeholder="Enter Employee Name">
+                        </div>
+
+                        <div class="form-group mx-auto">
+                            <label for="job-title1">Job title and short description
+                            </label>
+                            <input type="text" class="form-control valid" id="job-title1" placeholder="Enter job title and short description">
+                        </div>
+
+                        <div class="form-group mx-auto">
+                            <label for="job-date">When was the job task assessed using Vergo?
+                            </label>
+                            <input type="date" class="form-control valid" id="job-date">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-4 text-center mx-auto">
+                            <button class="btn" id="addEv">+</button>
+                            <button class="btn" id="removeEv">-</button>
+                        </div>
+                    </div>
+                    <!-- <div class="col-12 mx-auto">
+                        <div class="form-group mx-auto">
+                            <label for="skills">Skills:</label>
+                            <textarea class="form-control valid" id="skills" placeholder="Your Skills here"
+                                maxlength="300"></textarea>
+                        </div>
+                    </div> -->
+                </div>
+                     <hr id="divid">
+                     <span class="agree"
+                                style="color: red;padding-left: 8px;font-size: 11px;"></span>
+                                <br>
+                     <input type="checkbox" name="agree">
+                     <span style="padding-left:4px">By ticking you are confirming that you have read, understand and agree to Vergo's <a href="terms.html">terms and conditions</a></span>
                 <div class="col-md-4 text-center mx-auto">
                     <button type="button" id="submitButton">Submit</button>
                 </div>
@@ -142,7 +191,7 @@
             <div class="col-md-6">
                 <div class="col-12 mx-auto">
                     <div class="form-group mx-auto">
-                        <textarea class="form-control" rows="23" style="border-radius: 16px;" id="output"></textarea>
+                        <textarea class="form-control" rows="25" style="border-radius: 16px;" id="output"></textarea>
                     </div>
                 </div>
             </div>

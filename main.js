@@ -40,8 +40,6 @@ $(function () {
   })
   // addMore
 
-
-
   // remove Add
   $("#remove").click(function () {
     remove();
@@ -70,8 +68,6 @@ $(function () {
 
   })
   // addMore Job
-
-
 
   // remove Add Job
   $("#remove1").click(function () {
@@ -102,8 +98,6 @@ $(function () {
   })
   // addMore Job
 
-
-
   // remove Add Job
   $("#remove2").click(function () {
     remove();
@@ -118,6 +112,35 @@ $(function () {
 
   });
   // remove Add Job
+
+   // addMoreJob
+
+   $('#addMoreEv').click(function () {
+
+    addMore();
+
+    if (h > 1) {
+      $("#removeEv").show();
+    }
+
+  })
+  // addMore Job
+
+  // remove Add Job
+  $("#remove3").click(function () {
+    remove();
+
+    if (h <= 1) {
+      $("#remove3").hide();
+    }
+
+    if (h < 1) {
+      $('#addMoreEv').show();
+    }
+
+  });
+  // remove Add Job
+
 
 
   // addMore Work
@@ -223,11 +246,35 @@ $(function () {
   // remove Work
 
 
+   // addMore Work
+   $('#addEv').click(function () {
 
+    addMoreEv();
 
+    if (g > 1) {
+      $("#removeEv").show();
+    }
 
+    if (g > 1) {
+      $('#addEv').hide();
+    }
+  })
+  // addMore Work
 
+  // remove Work
+  $("#removeEv").click(function () {
 
+    removeEv();
+    if (c <= 1) {
+      $("#removeEv").hide();
+    }
+
+    if (c <= 1) {
+      $('#addEv').show();
+    }
+
+  });
+  // remove Work
 
   // form validation
   $("#submitButton").click(function () {
@@ -262,29 +309,31 @@ $(function () {
     var jobExp = $("#job-exp").val();
     console.log(jobExp)
 
-    var jobTasks = $("#job-tasks").val();
-    console.log(jobTasks)
+    var physicalDemands = $("#demands").val();
+    console.log(physicalDemands)
 
-    var jobTaskDifficulty = $("#job-task-difficulty").val();
-    console.log(jobTaskDifficulty)
+    var envFactors = $("#env-factors").val();
+    console.log(envFactors)
 
     var jobSchedule = $("#job-schedule").val();
     console.log(jobSchedule)
 
-    var previousInjuries = $("#previous-injuries").val();
-    console.log(previousInjuries)
+    // var previousInjuries = $("#previous-injuries").val();
+    // console.log(previousInjuries)
 
     var rebaScore = $("#reba-score").val();
     console.log(rebaScore)
+
+    var name1 = $("#name1").val();
+    console.log(name1)
+
+    var jobTitle1 = $("#job-title1").val();
+    console.log(jobTitle1)
 
     prompt = `
     Write a ergonomic evaluation report, provide recommendations and 
 implementation of ergonomic interventions. This is a report that an ergonomist or safety advisor is 
 writing for their company managers.\n\n
-When was the job task assessed using Vergo?\n
-Job task was assessed on ${jobDate} for hazards related to musculoskeletal disorders, as well as 
-other issues pertaining to workplace health and safety. Assessment took place by using a computer 
-vision pose estimation ergonomic tool that uses REBA standard.\n 
 Enter information about the employee\n
 Name: ${name}\n
 Gender: ${gender}\n
@@ -293,11 +342,19 @@ Job title and short job description : ${jobTitle} \n
 Organization working for: ${organization} \n
 Job site: ${jobSite} \n
 Length of Time on the Job: ${jobExp} \n
-Job Tasks: ${jobTasks} \n
-Job Task Difficulty: ${jobTaskDifficulty} \n
+Physical Demands including any risk factors: ${physicalDemands} \n
+Environmental factors: ${envFactors} \n
 Job Schedule and Breaks: ${jobSchedule} \n
-Any Previous injuries: ${previousInjuries} \n
-What was the REBA score using Vergo? ${rebaScore}
+What was the REBA score using Vergo? ${rebaScore}\n
+
+Enter information about the evaluator\n
+The person who is conducting the ergonomic assessment: ${name1}\n
+Job title: ${jobTitle1}\n
+When was the job task assessed using Vergo?\n
+Job task was assessed on ${jobDate} for hazards related to musculoskeletal disorders, as well as 
+other issues pertaining to workplace health and safety. Assessment took place by using a computer 
+vision pose estimation ergonomic tool that uses REBA standard.\n 
+
     `
 
     var inputsForValidate = $('.valid');
@@ -324,9 +381,10 @@ What was the REBA score using Vergo? ${rebaScore}
           response = JSON.parse(response);
 
           console.log(response);
-
-          document.getElementById("output").innerHTML =
-            response["choices"][0]["text"];
+          var output1=response["choices"][0]["text"];
+          var output2=`\n\n*************************************************************** \nDisclaimer: The ergonomic evaluation report provided by Vergo is intended for informational purposes only and is not intended to serve as a substitute for professional medical or legal advice. The information contained in this report is based on our assessment of the information provided to us, and we make no representation or warranty as to the accuracy, completeness, or suitability of the information contained herein. Additionally, while we have made every effort to ensure that the recommendations provided in this report are based on best practices and industry standards, we make no guarantee that implementation of these recommendations will prevent or mitigate any health or safety risks. By utilizing this report, you agree to hold Vergo harmless from any and all claims, liabilities, damages, and expenses that may arise from your use of this information.`;
+          document.getElementById("output").innerHTML = output1+output2
+            
         }
       };
 
@@ -386,18 +444,18 @@ function removeWork() {
   if (b == 2) {
     $("#workcClonediv").hide(500);
     b--;
-    $("#workcClonediv input").val('');
+    // $("#workcClonediv input").val('');
   }
 
   if (b == 3) {
     $("#workcClonedivTwo").hide(500);
     b--;
-    $("#workcClonedivTwo input").val('');
+    // $("#workcClonedivTwo input").val('');
   }
   if (b == 4) {
     $("#workcClonedivThree").hide(500);
     b--;
-    $("#workcClonedivThree input").val('');
+    // $("#workcClonedivThree input").val('');
   }
 }
 
@@ -416,7 +474,7 @@ function removeJob() {
   if (c == 2) {
     $("#jobSection").hide(500);
     c--;
-    $("#jobSection input").val('');
+    // $("#jobSection input").val('');
   }
 }
 
@@ -437,10 +495,28 @@ function removeStyle() {
   if (e == 2) {
     $("#styleSection").hide(500);
     e--;
-    $("#styleSection input").val('');
+    // $("#styleSection input").val('');
   }
 }
 
+var g = 1;
+function addMoreEv() {
+
+  if (g == 1) {
+    $("#evSection").show(500);
+    g++;
+  }
+
+}
+
+function removeEv() {
+
+  if (g == 2) {
+    $("#evSection").hide(500);
+    g--;
+    // $("#evSection input").val('');
+  }
+}
 
 
 
@@ -478,6 +554,14 @@ function check(inputsForValidate) {
       scrollTop: firstFailedInput.offset().top
     }, 700);
   }
+
+  if(!document.querySelector('input[type="checkbox"][name="agree"]:checked')){
+    document.getElementsByClassName('agree')[0].innerHTML="Please agree to our terms and conditions"
+  }
+  if(document.querySelector('input[type="checkbox"][name="agree"]:checked')){
+    document.getElementsByClassName('agree')[0].innerHTML=""
+  }
+
 
 
   return result;
