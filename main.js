@@ -330,28 +330,45 @@ $(function () {
     var jobTitle1 = $("#job-title1").val();
     console.log(jobTitle1)
 
-    prompt = `
-    Write a job task physical demands evaluation report, provide recommendations and implementation of ergonomic interventions. This is a report that an ergonomist or safety advisor is writing for their company senior management.Include recommendation and implementation and any applicable Canadian musculoskeletal workplace injury statistics for the industry.\n\n
-Enter information about the employee\n
-Employee Name: ${name}\n
-Job title and short job description : ${jobTitle} \n
-Organization working for: ${organization} \n
-Job site: ${jobSite} \n
-Length of Time working in this position: ${jobExp} \n
-Physical Demands including any risk factors: ${physicalDemands} \n
-Environmental factors: ${envFactors} \n
-Job Schedule and Breaks: ${jobSchedule} \n
-What was the REBA score using Vergo? And explain the reba score ${rebaScore}\n
+//     prompt = `
+//     Write a job task physical demands evaluation report, provide recommendations and implementation of ergonomic interventions. This is a report that an ergonomist or safety advisor is writing for their company senior management.Include recommendation and implementation and any applicable Canadian musculoskeletal workplace injury statistics for the industry.\n\n
+// Enter information about the employee\n
+// Employee Name: ${name}\n
+// Job title and short job description : ${jobTitle} \n
+// Organization working for: ${organization} \n
+// Job site: ${jobSite} \n
+// Length of Time working in this position: ${jobExp} \n
+// Physical Demands including any risk factors: ${physicalDemands} \n
+// Environmental factors: ${envFactors} \n
+// Job Schedule and Breaks: ${jobSchedule} \n
+// What was the REBA score using Vergo? And explain the reba score ${rebaScore}\n
 
-Enter information about the evaluator\n
-The person who is conducting the ergonomic assessment: ${name1}\n
-The evaluators job title: ${jobTitle1}\n
-When was the job task assessed using Vergo?\n
+// Enter information about the evaluator\n
+// The person who is conducting the ergonomic assessment: ${name1}\n
+// The evaluators job title: ${jobTitle1}\n
+// When was the job task assessed using Vergo?\n
+// Job task was assessed on ${jobDate} for hazards related to musculoskeletal disorders, as well as 
+// other issues pertaining to workplace health and safety. Assessment took place by using Vergo, a computer vision ergonomic tool that uses REBA standard.\n
+
+
+//     `
+
+prompt=`
+Write a job task physical demands evaluation report, provide recommendations and implementation of 
+ergonomic interventions. This is a report that an ergonomist or safety advisor is writing for their 
+company senior management. Include recommendation and implementation and any applicable 
+Canadian musculoskeletal workplace injury statistics for the industry. Create in report style and do not 
+include any closing like best regards. Do not include any medical or physiotherapy recommendations 
+or advice. \n\n Enter information about the employee\n Employee Name: ${name}\n Job title and short 
+job description : ${jobTitle} \n Organization working for: ${organization} \n Job site: ${jobSite} \n Length 
+of Time working in this position: ${jobExp} \n Physical Demands including any risk factors: 
+${physicalDemands} \n Environmental factors: ${envFactors} \n Job Schedule and Breaks: 
+${jobSchedule} \n The REBA score using Vergo was ${rebaScore}, and explain the reba score\n Enter 
+information about the evaluator\n The person who is conducting the ergonomic assessment: 
+${name1}\n The evaluators job title: ${jobTitle1}\n When was the job task assessed using Vergo?\n 
 Job task was assessed on ${jobDate} for hazards related to musculoskeletal disorders, as well as 
-other issues pertaining to workplace health and safety. Assessment took place by using Vergo, a computer vision ergonomic tool that uses REBA standard.\n
-
-
-    `
+other issues pertaining to workplace health and safety. The assessment took place by using Vergo, a 
+computer vision based ergonomic tool.\n`
 
     var inputsForValidate = $('.valid');
 
