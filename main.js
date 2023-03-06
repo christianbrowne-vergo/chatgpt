@@ -363,7 +363,7 @@ or advice. \n\n Enter information about the employee\n Employee Name: ${name}\n 
 job description : ${jobTitle} \n Organization working for: ${organization} \n Job site: ${jobSite} \n Length 
 of Time working in this position: ${jobExp} \n Physical Demands including any risk factors: 
 ${physicalDemands} \n Environmental factors: ${envFactors} \n Job Schedule and Breaks: 
-${jobSchedule} \n The REBA score using Vergo was ${rebaScore}, and explain the reba score\n Enter 
+${jobSchedule} \n The REBA score using Vergo was ${rebaScore}, and explain this reba score in correct detail \n Enter 
 information about the evaluator\n The person who is conducting the ergonomic assessment: 
 ${name1}\n The evaluators job title: ${jobTitle1}\n When was the job task assessed using Vergo?\n 
 Job task was assessed on ${jobDate} for hazards related to musculoskeletal disorders, as well as 
