@@ -31,6 +31,10 @@
         <div class="row">
             <div class="col-md-6 mx-auto wow pulse">
                 <h2 id="intro">Job Task Evaluation Report</h2>
+                <p style="text-align: center;">
+                    Instructions: Fill out the requested information below (be as descriptive as possible), review the terms and conditions and click the "submit" button. The report takes approximately 30 seconds to generate and will appear in the large text box on the right side.
+
+                </p>
             </div>
         </div>
     </div>
@@ -59,7 +63,7 @@
                         <div class="form-group mx-auto">
                             <label for="job-title">Job title and short description
                             </label>
-                            <input type="text" class="form-control valid" id="job-title" placeholder="">
+                            <textarea class="form-control valid" id="job-title" placeholder="" rows="5"></textarea>
                         </div>
                                    
                         <div class="form-group mx-auto">
@@ -108,17 +112,21 @@
                             <input type="text" class="form-control valid" id="job-task-difficulty" placeholder="Enter job task difficulty">
                         </div> -->
                             <div class="form-group mx-auto">
-                            <label for="demands">Physical demands including any risk factor
+                            <label for="demands">Physical demands including any risk factors
+                                <small>e.g. (repetitive motions, heavy lifting, awkward postures)</small>
                             </label>
-                            <input type="text" class="form-control valid" id="demands" placeholder="">
+                            <textarea class="form-control valid" id="demands" placeholder="" rows="5"></textarea>
                         </div>
                         <div class="form-group mx-auto">
-                            <label for="env-factors">Environmental Factors
+                            <label for="env-factors">Environmental Factors <small>(e.g. lighting, temperature, noise)</small>
+
                             </label>
-                            <input type="text" class="form-control valid" id="env-factors" placeholder="">
+                            <textarea class="form-control valid" id="env-factors" placeholder="" rows="5"></textarea>
                         </div>
                         <div class="form-group mx-auto">
-                            <label for="job-schedule">Job Schedule and Breaks
+                            <label for="job-schedule">Work Schedule and Breaks <small>
+                                (e.g. 1 hour lunch break)
+                            </small>
                             </label>
                             <input type="text" class="form-control valid" id="job-schedule" placeholder="">
                         </div>
