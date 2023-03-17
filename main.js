@@ -360,10 +360,12 @@ company senior management. Include recommendation and implementation and any app
 Canadian musculoskeletal workplace injury statistics for the industry. Create in report style and do not 
 include any closing like best regards. Do not include any medical or physiotherapy recommendations 
 or advice. \n\n Enter information about the employee\n Employee Name: ${name}\n Job title and short 
-job description : ${jobTitle} \n Organization working for: ${organization} \n Job site: ${jobSite} \n Length 
-of Time working in this position: ${jobExp} \n Physical Demands including any risk factors: 
+job description : ${jobTitle} \n Organization working for: ${organization} \n Job site: ${jobSite} \n Length of Time working in this position: ${jobExp} \n Physical Demands including any risk factors: 
 ${physicalDemands} \n Environmental factors: ${envFactors} \n Job Schedule and Breaks: 
-${jobSchedule} \n The REBA score using Vergo was ${rebaScore}, and explain this reba score in correct detail \n Enter 
+${jobSchedule} \n The REBA score using Vergo was ${ rebaScore }, and fully explain what a reba score of
+${ rebaScore } means based on scoring 1-2 = The person is working in the best posture with no risk of
+injury, 3-4 = The person is working in a posture that could present some risk, 5-7 = The person is working
+in a poor posture with a risk of injury, 8+ = The person is working in the worst posture. \n Enter 
 information about the evaluator\n The person who is conducting the ergonomic assessment: 
 ${name1}\n The evaluators job title: ${jobTitle1}\n When was the job task assessed using Vergo?\n 
 Job task was assessed on ${jobDate} for hazards related to musculoskeletal disorders, as well as 
