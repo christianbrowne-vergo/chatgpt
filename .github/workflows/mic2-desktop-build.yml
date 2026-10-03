@@ -1,0 +1,48 @@
+name: Build Mic 2.0 Mac
+
+on:
+  push:
+    branches:
+      - mic2-desktop-build
+    paths:
+      - "mic2-desktop/**"
+      - ".github/workflows/mic2-desktop-build.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  build-mac:
+    runs-on: macos-latest
+    defaults:
+      run:
+        working-directory: mic2-desktop
+    env:
+      CSC_IDENTITY_AUTO_DISCOVERY: "false"
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "24"
+          cache: npm
+          cache-dependency-path: mic2-desktop/package-lock.json
+
+      - name: Install dependencies
+        run: npm install --no-audit --no-fund
+
+      - name: Build Apple Silicon
+        run: npm run dist:mac:arm64
+
+      - name: Build Intel
+        run: npm run dist:mac:x64
+
+      - name: Upload Mac builds
+        uses: actions/upload-artifact@v4
+        with:
+          name: Mic-2.0-mac-test-builds
+          path: |
+            mic2-desktop/dist/*.dmg
+            mic2-desktop/dist/*.zip
+          if-no-files-found: error
