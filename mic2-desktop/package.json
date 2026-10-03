@@ -1,0 +1,39 @@
+{
+  "name": "mic2-desktop",
+  "version": "0.1.0",
+  "description": "Mic 2.0 desktop shell for two-way realtime meeting translation",
+  "main": "main.js",
+  "author": "Mic 2.0",
+  "private": true,
+  "scripts": {
+    "start": "electron .",
+    "dist:mac:arm64": "electron-builder --mac dmg zip --arm64 --publish never",
+    "dist:mac:x64": "electron-builder --mac dmg zip --x64 --publish never"
+  },
+  "devDependencies": {
+    "electron": "44.5.1",
+    "electron-builder": "^26.0.12"
+  },
+  "build": {
+    "appId": "ai.mic2.desktop",
+    "productName": "Mic 2.0",
+    "asar": true,
+    "artifactName": "Mic-2.0-${version}-${arch}.${ext}",
+    "files": [
+      "main.js",
+      "preload.js",
+      "package.json"
+    ],
+    "mac": {
+      "target": ["dmg", "zip"],
+      "category": "public.app-category.productivity",
+      "identity": null,
+      "extendInfo": {
+        "NSMicrophoneUsageDescription": "Mic 2.0 uses your microphone to translate your speech during meetings."
+      }
+    },
+    "dmg": {
+      "title": "Mic 2.0"
+    }
+  }
+}
